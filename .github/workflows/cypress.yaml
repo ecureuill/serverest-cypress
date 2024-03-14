@@ -29,12 +29,6 @@ jobs:
     - name: Terminate background server process
       run: |
         kill $background_pid
-    
-    - name: Publish Junit Test Report
-      uses: mikepenz/action-junit-report@v4
-      if: success() || failure()
-      with:
-        report_paths: '**/results/output.xml'
 
     - name: Get Allure history
       uses: actions/checkout@v4
