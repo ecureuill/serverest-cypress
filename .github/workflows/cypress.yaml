@@ -15,7 +15,10 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@v4
- 
+      
+    - name: Start API Server
+      run: npx serverest
+      
     - name: Run Cypress tests
       uses: cypress-io/github-action@v6
       env:
