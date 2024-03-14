@@ -1,0 +1,169 @@
+{
+  "create": {
+    "success": {
+      "admin": {
+        "nome": "Maria Oliveira",
+        "email": "mariaoliveira@email.com",
+        "password": "Senha456",
+        "administrador": "true"
+      },
+      "not_admin": {
+        "nome": "João Silva",
+        "email": "joaosilva@email.com",
+        "password": "Senha123",
+        "administrador": "false"
+      }
+    },
+    "duplicated": {
+      "nome": "Mariana Silva",
+      "email": "marianasilva@email.com",
+      "password": "Senha123",
+      "administrador": "false"
+    }, 
+    "invalid": [
+      {
+        "nome": "",
+        "email": "marciobarbosa@email.com",
+        "password": "Senha1011",
+        "administrador": "false"
+      },
+      {
+        "nome": "Pedro Santos",
+        "email": "pedrosantos",
+        "password": "Senha1213",
+        "administrador": "false"
+      },
+      {
+        "nome": "Rafael Costa",
+        "email": "rafaelcosta@email.com",
+        "password": "",
+        "administrador": "false"
+      }
+    ] 
+  },
+  "edit": {
+    "success": {
+      "edition": {
+        "nome": "Joséphine de Bonaparte",
+        "email": "josephine@bonaparte.fr",
+        "password": "Imperatriz1804",
+        "administrador": "true"
+      },
+      "user": {
+        "nome": "Joséphine de Beauharnais",
+        "email": "josephine@bonaparte.fr",
+        "password": "SenhaImperatriz1804",
+        "administrador": "false"
+      }
+    },
+    "not_found": {
+      "new_user": {
+        "nome": "Ana Clara",
+        "email": "anaclara@exemplo.com",
+        "password": "!SenhaComSimbolos123#",
+        "administrador": "false"
+      },
+      "duplicated": {
+        "nome": "Eduardo Fernandes",
+        "email": "eduardofernandes@email.com",
+        "password": "pwd123",
+        "administrador": "false"
+      }
+    },
+    "fail": {
+      "original": {
+        "nome": "Bruno Moura",
+        "email": "brunomoura@empresa.com.br",
+        "password": "Senha1234",
+        "administrador": "false"
+      },
+      "invalid": [
+        {
+          "nome": "",
+          "email": "brunomoura@empresa.com.br",
+          "password": "SenhaComFrase&1234",
+          "administrador": "false"
+        },
+        {
+          "nome": "Bruno Moura",
+          "email": "",
+          "password": "Senha1234",
+          "administrador": "false"
+        },
+        {
+          "nome": "Bruno Moura",
+          "email": "brunomoura@empresa.com.br",
+          "password": "",
+          "administrador": "false"
+        },
+        {
+          "nome": "Bruno Moura",
+          "email": "brunomoura@empresa.com.br",
+          "password": "Senha1234",
+          "administrador": ""
+        },
+        {
+          "nome": "Bruno Moura",
+          "email": "empresa.com.br",
+          "password": "Senha1234",
+          "administrador": "false"
+        }
+      ]
+    }
+  },
+  "delete": {
+    "success": {
+      "nome": "Bruno Santos",
+      "email": "brunosantos@email.com",
+      "password": "Senha456",
+      "administrador": "false"
+    },
+    "fail": {
+      "not_found": {
+        "id": "123"
+      },
+      "has_cart": {
+        "user": {
+          "nome": "Daniela Costa",
+          "email": "danielacosta@user.com",
+          "password": "Senha1213",
+          "administrador": "true"
+        },
+        "product":{
+          "nome": "Livro de ficção científica",
+          "preco": 40.00,
+          "descricao": "Livro de ficção científica com 300 páginas",
+          "quantidade": 5
+        },
+        "items":  [
+          {
+            "nome": "Livro de ficção científica",
+            "quantidade": 3
+          }
+        ]
+      }
+    }
+  },
+  "list": {
+    "data": [
+      {
+        "nome": "Gabriel Garcia",
+        "email": "gabrielgarcia@email.com",
+        "administrador": "true",
+        "password": "pwd123"
+      },
+      {
+        "nome": "Gabriela Duarte",
+        "email": "gabrieladuarte@email.com",
+        "administrador": "false",
+        "password": "pwd123"
+      },
+      {
+        "nome": "Rafael Almeida",
+        "email": "rafaelalmeida@email.com",
+        "administrador": "false",
+        "password": "pwd123"
+      }
+    ]
+  }
+}

@@ -1,0 +1,51 @@
+name: Cypress Tests
+
+on:
+  push:
+    branches:
+      - main
+permissions:
+  checks: write
+  pages: write
+  contents: write
+jobs:
+  run-tests:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+ 
+    - name: Run Cypress tests
+      uses: cypress-io/github-action@v6
+      env:
+          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+    
+    - name: Publish Junit Test Report
+      uses: mikepenz/action-junit-report@v4
+      if: success() || failure()
+      with:
+        report_paths: '**/results/output.xml'
+
+    - name: Get Allure history
+      uses: actions/checkout@v4
+      if: always()
+      continue-on-error: true
+      with:
+          ref: allure
+          path: allure
+
+    - name: Generate Allure Report
+      uses: simple-elf/allure-report-action@master
+      if: always()
+      with:
+          allure_results: allure-results
+          gh_pages: allure
+
+    - name: Deploy report to Github Pages
+      if: always()
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: allure
+          publish_dir: allure-history
