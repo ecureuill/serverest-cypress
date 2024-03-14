@@ -17,12 +17,18 @@ jobs:
       uses: actions/checkout@v4
       
     - name: Start API Server
-      run: npx serverest
-      
+      run: |
+        npx serverest &
+        background_pid=$!
+
     - name: Run Cypress tests
       uses: cypress-io/github-action@v6
       env:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+    
+    - name: Terminate background server process
+      run: |
+        kill $background_pid
     
     - name: Publish Junit Test Report
       uses: mikepenz/action-junit-report@v4
