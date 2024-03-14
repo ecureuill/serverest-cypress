@@ -5,7 +5,9 @@ This project is for studying the Cypress framework by performing end-to-end (E2E
 [![Badge ServeRest](https://img.shields.io/badge/API-ServeRest-green)](https://github.com/ServeRest/ServeRest/)
 
 ## Table of Content
-
+- [Continious Ingregration (CI)](#continuous-integration-ci)
+- [Report](#report)
+- [Bug Report](#bug-report)
 - [Data Management](#data-management)
 - [Runnig Locally](#running-locally)
 - [Test Scenarios](#test-scenarios)
@@ -13,6 +15,22 @@ This project is for studying the Cypress framework by performing end-to-end (E2E
     - [Produtos endpoint](#produtos-endpoint)
     - [Carrinhos endpoint](#carrinhos-endpoint)
 - [Feedback and Questions](#feedback-and-questions)
+
+
+## Continuous Integration (CI)
+
+A pipeline has been implemented to automatically execute the tests and generate an Allure report whenever there's a push to the main branch. 
+
+## Report
+
+You can access the Allure report [here](https://ecureuill.github.io/serverest-cypress). This report provides a comprehensive overview of the test execution, including passed, failed, and skipped tests with detailed logs.
+
+## Bug Report
+
+During testing, a bug was identified in the scenario "Should cancel a cart and return products to stock":
+
+The Swagger documentation of the API states that the response body for the `/carrinhos/cancelar-compra` contains a message 'Registro excluído com sucesso' (Record deleted successfully), but it's currently returning 'Registro excluído com sucesso. Estoque dos produtos reabastecido' (Record deleted successfully. Product stock refilled).
+
 
 ## Data Management
 
