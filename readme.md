@@ -80,7 +80,6 @@ Notes:
 
 ## Test Scenarios
 ### Usuarios endpoint
-Absolutely, here's the documentation for the test scenarios you provided:
 
 #### GET /usuarios
 
